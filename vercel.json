@@ -1,17 +1,9 @@
 {
   "version": 2,
-  "outputDirectory": "staticfiles",
   "builds": [
     {
       "src": "backend/smart_food_network/wsgi.py",
       "use": "@vercel/python"
-    },
-    {
-      "src": "build_files.sh",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "staticfiles"
-      }
     }
   ],
   "routes": [
