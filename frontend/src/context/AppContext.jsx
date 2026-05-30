@@ -3,7 +3,10 @@ import axios from 'axios';
 
 const AppContext = createContext(null);
 
-const BACKEND_URL = 'http://localhost:8000/api';
+const BACKEND_URL = import.meta.env.VITE_API_URL || 
+  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:8000/api'
+    : 'https://smart-food-ai.vercel.app/api');
 
 export const AppProvider = ({ children }) => {
   const [user, setUser] = useState(null);
