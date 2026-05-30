@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #FAFDFB;
+    color: #1E293B;
+  }
+}
+
+/* Elegant minimal gray scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAFDFB;
+}
+::-webkit-scrollbar-thumb {
+  background: #E2E8F0;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #10B981;
+}
+
+/* Premium White Glassmorphism Panel design systems */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(16, 185, 129, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(16, 185, 129, 0.03);
+}
+
+.glass-panel-eco-green {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(16, 185, 129, 0.05);
+}
+
+.glass-panel-eco-mint {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(52, 211, 153, 0.05);
+}
+
+/* Glowing text gradients */
+.gradient-text-green {
+  background: linear-gradient(135deg, #065F46 0%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-cyan-blue {
+  background: linear-gradient(135deg, #0D9488 0%, #10B981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-orange {
+  background: linear-gradient(135deg, #F97316 0%, #D97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Light Shimmer Loading placeholders */
+.shimmer {
+  background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%);
+  background-size: 200% 100%;
+  animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Leaflet map custom clean theme override */
+.leaflet-container {
+  background-color: #F8FAFC !important;
+}
+.leaflet-bar a {
+  background-color: #FFFFFF !important;
+  color: #1E293B !important;
+  border-color: rgba(16, 185, 129, 0.1) !important;
+}
+.leaflet-bar a:hover {
+  background-color: #ECFDF5 !important;
+  color: #10B981 !important;
+}
+
+/* 3D Perspective scrolling grid backdrop */
+.perspective-container {
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+  overflow: hidden;
+}
+
+.perspective-grid {
+  background-image: 
+    linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  transform: rotateX(65deg) translateY(-150px) translateZ(-80px);
+  transform-origin: top center;
+  animation: grid-scroll 35s linear infinite;
+  box-shadow: inset 0 0 100px #FAFDFB;
+}
+
+@keyframes grid-scroll {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 1000px; }
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Circular Progress Glow keyframe */
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
