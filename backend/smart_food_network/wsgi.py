@@ -1,4 +1,9 @@
 import os
+import sys
+
+# Add the backend root directory to the python search path to support Vercel serverless entrypoint imports
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'smart_food_network.settings')
