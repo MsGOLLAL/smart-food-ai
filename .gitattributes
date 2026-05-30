@@ -1,0 +1,2 @@
+# Force git to keep LF line endings for Bash scripts on Windows
+*.sh text eol=lf
