@@ -84,11 +84,17 @@ if DB_NAME and DB_USER and DB_PASSWORD:
         }
     }
 else:
-    # Fail-safe local SQLite fallback for seamless execution out-of-the-box
+    # Fail-safe local SQLite fallback for seamless execution out-of-the-box.
+    # On Vercel, utilize the writable /tmp directory to avoid read-only filesystem crashes.
+    if os.environ.get('VERCEL') == '1':
+        db_path = '/tmp/db.sqlite3'
+    else:
+        db_path = BASE_DIR / 'db.sqlite3'
+        
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'NAME': db_path,
         }
     }
 
