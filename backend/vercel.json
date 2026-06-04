@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "smart_food_network/wsgi.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.11"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "smart_food_network/wsgi.py"
+    }
+  ],
+  "env": {
+    "VERCEL": "1",
+    "DEBUG": "False",
+    "DJANGO_SETTINGS_MODULE": "smart_food_network.settings"
+  }
+}
